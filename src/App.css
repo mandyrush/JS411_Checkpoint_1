@@ -10,7 +10,7 @@ h2 {
 }
 
 .dashboard {
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 .dashboard-cards {
@@ -26,6 +26,10 @@ h2 {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+    }
+
+    .dashboard-cards .card {
+        flex-basis: 100px;
     }
 
     .dashboard-cards .card:not(:last-child) {

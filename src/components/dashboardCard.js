@@ -5,19 +5,29 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-export default function DashboardCard() {
+export default function DashboardCard({
+    title,
+    body,
+    state,
+    setState,
+    component: Component
+}) {
+    const handleChange = () => {
+        setState(!state);
+    }
+
     return (
         <Card sx={{ flexGrow: 1 }} className="card">
             <CardContent>
                 <Typography variant="h6" component="h3" gutterBottom>
-                    Title
+                    {title}
                 </Typography>
                 <Typography variant="body2">
-                    Body
+                    {body}
                 </Typography>
             </CardContent>
             <CardActions>
-                Button
+                <Component handleChange={handleChange}></Component>
             </CardActions>
         </Card>
     )
