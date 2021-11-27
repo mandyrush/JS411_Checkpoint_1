@@ -2,7 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
-export default function BasicSlider() {
+export default function BasicSlider({
+    state,
+    handleChange
+}) {
     return (
         <Box sx={{ width: 300 }}>
             <Slider
@@ -10,7 +13,8 @@ export default function BasicSlider() {
                 step={10}
                 marks min={0}
                 max={100}
-                valueLabelDisplay="auto" />
+                valueLabelDisplay="auto"
+                onChange={(event) => handleChange(event.target.value)} />
         </Box>
     );
 }

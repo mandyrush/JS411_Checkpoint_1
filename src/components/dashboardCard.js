@@ -12,8 +12,8 @@ export default function DashboardCard({
     setState,
     component: Component
 }) {
-    const handleChange = () => {
-        setState(!state);
+    const handleChange = (updatedState) => {
+        setState(updatedState);
     }
 
     return (
@@ -27,7 +27,7 @@ export default function DashboardCard({
                 </Typography>
             </CardContent>
             <CardActions>
-                <Component handleChange={handleChange}></Component>
+                <Component state={state} handleChange={handleChange}></Component>
             </CardActions>
         </Card>
     )
